@@ -1,0 +1,59 @@
+.custom-navbar {
+  background: rgba(34, 34, 34, 0.7);
+  backdrop-filter: blur(10px);
+  transition: background 0.4s ease;
+}
+
+.navbar-brand {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #f8f9fa !important;
+  position: relative;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffc107;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active section highlight */
+.nav-link.active {
+  color: #ffc107 !important;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .custom-navbar {
+    background: rgba(34, 34, 34, 0.9);
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
+}
