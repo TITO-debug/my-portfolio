@@ -1,21 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'aos/dist/aos.css';
-import AOS from 'aos';
-import { useEffect } from 'react';
-import './styles/custom.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "aos/dist/aos.css";
+import "./styles/custom.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { ReactTyped } from "react-typed";
 
-
-
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
