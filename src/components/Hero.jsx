@@ -1,5 +1,5 @@
 import React from "react";
-import Typed from "react-typed";
+import { ReactTyped } from "react-typed";
 import "../styles/custom.css";
 
 const Hero = () => {
@@ -7,7 +7,7 @@ const Hero = () => {
     <section id="home" className="hero-section">
       <div data-aos="zoom-in" data-aos-duration="1000">
         <h1 className="hero-title">
-          <Typed
+          <ReactTyped
             strings={[
               "Hey, I'm Titus",
               "A Full-Stack Developer",

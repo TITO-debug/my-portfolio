@@ -9,6 +9,8 @@ import AOS from 'aos';
 import { useEffect } from 'react';
 import './styles/custom.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { ReactTyped } from "react-typed";
+
 
 
 
