@@ -1,23 +1,17 @@
 import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-// import { ReactTyped } from "react-typed";
-
-
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
-
-
-
-
-
+import AdminDashboard from "./components/AdminDashboard";
 
 function App() {
   useEffect(() => {
@@ -28,21 +22,34 @@ function App() {
       offset: 100,
     });
   }, []);
-//   useEffect(() => {
-//   AOS.init({ duration: 800, once: true });
-// }, []);
-
 
   return (
-    <>
-      <Header />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
-      <WhatsAppButton />
-    </>
+    <Router>
+      <Routes>
+        {/* Main Portfolio Page */}
+        <Route
+          path="/"
+          element={
+            <div style={{ backgroundColor: "#121212", minHeight: "100vh", color: "#fff" }}>
+              <Header />
+              <Hero />
+              <About />
+              <Projects />
+              <Testimonials />
+              <Contact />
+              <Footer />
+              <WhatsAppButton />
+            </div>
+          }
+        />
+
+        {/* Secured Admin Page */}
+        <Route path="/nyabiya" element={<AdminDashboard />} />
+
+        {/* Catch all unknown routes */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
   );
 }
 
