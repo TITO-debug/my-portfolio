@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -15,10 +15,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_h8eb7gc", // Replace with your EmailJS service ID
-        "template_r6jheer", // Replace with your EmailJS template ID
+        "service_h8eb7gc", // Your EmailJS service ID
+        "template_r6jheer", // Your EmailJS template ID
         formData,
-        "WeirvFMs05EmDInK-" // Replace with your EmailJS public key
+        "WeirvFMs05EmDInK-" // Your EmailJS public key
       )
       .then(
         () => {
@@ -42,6 +42,7 @@ const Contact = () => {
           I’d love to hear from you — let’s build something amazing together.
         </p>
 
+        {/* Contact Form */}
         <div className="row justify-content-center">
           <div className="col-md-6">
             <form
@@ -100,17 +101,48 @@ const Contact = () => {
           </div>
         </div>
 
+        {/* Social Icons */}
         <div className="mt-5" data-aos="fade-up" data-aos-delay="400">
-          <a href="mailto:yourname@email.com" className="mx-3 fs-4">
+          {/* Gmail Icon */}
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=ttybusiness1@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 fs-4"
+          >
             <FaEnvelope style={{ color: "#00ff88" }} />
           </a>
-          <a href="https://github.com/yourgithub" target="_blank" rel="noreferrer" className="mx-3 fs-4">
-            <FaGithub style={{ color: "#00ff88" }} />
+
+          {/* WhatsApp Icon */}
+        
+
+          {/* Instagram Icon */}
+          <a
+            href="https://instagram.com/_titogotnohuzz_"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 fs-4"
+          >
+            <FaInstagram style={{ color: "#00ff88" }} />
           </a>
-          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noreferrer" className="mx-3 fs-4">
+
+          {/* LinkedIn Icon */}
+          <a
+            href="https://linkedin.com/in/yourlinkedin"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 fs-4"
+          >
             <FaLinkedin style={{ color: "#00ff88" }} />
           </a>
-          <a href="https://twitter.com/yourtwitter" target="_blank" rel="noreferrer" className="mx-3 fs-4">
+
+          {/* Twitter Icon */}
+          <a
+            href="https://twitter.com/yourtwitter"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 fs-4"
+          >
             <FaTwitter style={{ color: "#00ff88" }} />
           </a>
         </div>

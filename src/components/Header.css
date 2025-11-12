@@ -57,3 +57,76 @@ html {
     margin: 10px 0;
   }
 }
+
+/* Neon gradient animation for logo */
+.logo {
+  font-family: 'Fira Code', monospace;
+  font-size: 2rem;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  background: linear-gradient(270deg, #00ff88, #0fff66, #00b3ff, #ff00ff, #ffdd00);
+  background-size: 1000% 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonGradient 6s ease infinite;
+}
+
+@keyframes neonGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glowing underline on nav links */
+.nav-list li {
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-list li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 3px;
+  background: #00ff88;
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+.nav-list li:hover::after,
+.nav-list li.active::after {
+  width: 100%;
+}
+
+/* Hamburger animation */
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background: #00ff88;
+  transition: all 0.4s ease;
+  border-radius: 2px;
+}
+
+.main-header .hamburger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.main-header .hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.main-header .hamburger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { ReactTyped } from "react-typed";
+
 
 
 import Header from "./components/Header";
@@ -10,6 +12,11 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
+
+
+
+
 
 
 function App() {
@@ -34,6 +41,7 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

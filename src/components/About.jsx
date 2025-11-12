@@ -55,7 +55,7 @@ const About = () => {
             right transform.
           </p>
 
-          {Object.keys(sections).map((key, idx) => {
+          {Object.keys(sections).map((key) => {
             const s = sections[key];
             const open = activeSection === key;
 
@@ -127,6 +127,28 @@ const About = () => {
             </motion.div>
           </AnimatePresence>
         </div>
+      </div>
+      <div>
+        <div className="skills-section">
+  <h3 style={{ color: "#00ff88" }}>Languages & Skills</h3>
+  {[
+    { name: "Python", level: 100 },
+    { name: "JavaScript", level: 90 },
+    { name: "HTML/CSS", level: 95 },
+    { name: "Kotlin", level: 70 },
+  ].map((skill) => (
+    <div key={skill.name} className="skill-bar">
+      <span>{skill.name}</span>
+      <div className="bar-bg">
+        <div
+          className="bar-fill"
+          style={{ width: `${skill.level}%` }}
+        ></div>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );

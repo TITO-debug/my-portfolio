@@ -22,8 +22,8 @@ const Hero = () => {
         <p className="hero-subtitle">
           I design, code, and deliver modern web solutions with creativity and precision.
         </p>
-        <a href="#projects" className="btn btn-outline-dark mt-4 px-4 py-2">
-          View My Work
+        <a href="#about" className="btn btn-outline-dark mt-4 px-4 py-2">
+          Know More
         </a>
       </div>
     </section>

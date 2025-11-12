@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/custom.css";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
+
+  // Close mobile menu on window resize if > 768px
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) setMenuOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const scrollToSection = (id) => {
     if (id === "home") {
@@ -13,12 +22,12 @@ const Header = () => {
       if (el) el.scrollIntoView({ behavior: "smooth" });
     }
     setActiveLink(id);
-    setMenuOpen(false);
+    setMenuOpen(false); // Close menu after click on mobile
   };
 
   return (
     <header className="main-header">
-      <nav className="navbar container d-flex justify-content-between align-items-center py-3">
+      <nav className="navbar container">
         <h3 className="logo">
           Tito<span>Dev</span>
         </h3>
@@ -51,7 +60,7 @@ const Header = () => {
         </ul>
 
         <div
-          className="hamburger"
+          className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <div className="line"></div>
